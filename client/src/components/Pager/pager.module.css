@@ -1,0 +1,32 @@
+.container {
+  align-items: center;
+  gap: 1rem;
+  background-color: #1f2022;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 250px;
+  padding-right: 0px;
+
+  
+}
+
+.ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.li {
+  padding: 0.25rem 0.5rem;
+  background: hsl(227.37deg 12.1% 30.78%);
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.li:hover {
+  background-color: #8d919b;
+}

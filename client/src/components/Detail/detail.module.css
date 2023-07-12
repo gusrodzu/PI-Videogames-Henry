@@ -1,0 +1,260 @@
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8d919b;
+  margin: auto;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.containertext {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 30px;
+}
+
+.text {
+  flex: 1;
+  margin: 50px;
+ 
+  
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #8d919b;
+}
+
+.description {
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 12px;
+  margin: 10px;
+  background-color: #ffffff72;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  
+}
+
+.lowerinfo {
+  margin-top: 0px;
+  
+
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #000;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* box-shadow:  0.1px 0.2px 0.3px hsl(var(--shadow-color) / 0),
+  0.8px 1.7px 2.8px hsl(var(--shadow-color) / 0.06),
+  1.4px 3px 5px hsl(var(--shadow-color) / 0.13),
+  2px 4.3px 7.1px hsl(var(--shadow-color) / 0.19),
+  2.7px 5.8px 9.6px hsl(var(--shadow-color) / 0.25),
+  3.6px 7.7px 12.8px hsl(var(--shadow-color) / 0.32),
+  4.8px 10.2px 16.9px hsl(var(--shadow-color) / 0.38),
+  6.3px 13.6px 22.5px hsl(var(--shadow-color) / 0.44),
+  8.4px 18px 29.8px hsl(var(--shadow-color) / 0.51);
+  */
+  
+
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border-color: #000;
+
+
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contall {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.innercont {
+  flex: 1;
+}
+
+.name {
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.lowerinfo {
+  margin-top: 20px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #000;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.rigth {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+  gap: 0.5rem;
+}
+
+li {
+  padding: 0.25rem 0.5rem;
+  background-color: #35a3dc;
+  color: #fff;
+  border-radius: 20px;
+
+}
+
+/* li:hover {
+  background-color: #1f546d;
+} */
+
+.text {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 100;
+  margin-top: 10px;
+  color: #ed0c0c;
+}
+
+.title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #c41e1e;
+  /* text-shadow: 2px 2px 4px #38180F; */
+}
+
+
+
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+/* 
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #263238;
+}
+@keyframes rotation {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg)}
+}  */
+.loadingcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loadingtext {
+  font-size: 24px;
+  color: #333;
+}
+
+
+
+
+
+
+/* .loader{
+  background-color: #35a3dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+.loaderText {
+  font-size: 24px;
+  color: #ffffff;
+}  */
