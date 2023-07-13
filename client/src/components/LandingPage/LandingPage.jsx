@@ -10,7 +10,7 @@ const LandingPage = () => {
         <br></br>
         <div className={style.containerbox}>
           <Link to="/home" className={style.link}>
-            <button className={style.button}>↳</button>
+            <button className={style.button}> ↳</button>
           </Link>
         </div>
      </div>
