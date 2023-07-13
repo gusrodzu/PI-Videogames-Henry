@@ -23,18 +23,20 @@
   background-color: #35a3dc;
   color: #ffffff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
 }
 
+
+
 .buton:hover {
   background-color: #1f546d;
   color: #ffffff;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 4px;

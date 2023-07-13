@@ -4,6 +4,9 @@ import { getDetail } from "../../redux/actions/index";
 import { useEffect } from "react";
 import style from "./detail.module.css";
 
+
+import loaderimg from "../../assets/Loading progress.gif";
+
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -71,7 +74,7 @@ const Detail = () => {
                 </div>
               </div>
 
-              <Link to="/home" className={style.link}>
+              <Link to="/home" className={style.button}>
                 Regresar
               </Link>
             </div>
@@ -83,7 +86,9 @@ const Detail = () => {
         </div>
       ) : (
         <div className={style.loadingcontainer}>
-          <h2 className={style.loadingtext}>Loading...</h2>
+          <div className={style.loader}>
+          <div className= {style.loaderAnimacion}></div>
+          </div>
         </div>
       )}
     </div>
