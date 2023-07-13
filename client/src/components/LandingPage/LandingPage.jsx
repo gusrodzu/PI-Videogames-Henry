@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./landingpage.module.css";
-import control from "../../assets/Game Controller.png";
+import control from "../../assets/Kerfin7_NEA_2332.png";
 
 
 const LandingPage = () => {
@@ -17,23 +17,19 @@ const LandingPage = () => {
     //     </div>
     //  </div>
     // </div>
-
     <div className={style.container}>
-        <div className={style.containertext}>
-          <div className={style.title}>
-            <div className={style.box}>
-              <h2>Hola Bienvendidos</h2>
-              <Link to="/home" className={style.button}>
-                Ingresar
-              </Link>
+    <div className={style.containertext}>
+      <div>
+        <h2 className={style.title}>Bienvenidos</h2>
+        <Link to="/home" className={style.button}>
+          Ingresar
+        </Link>
+      </div>
 
-            </div>
-          </div>
-
-          {/* <div className={style.photo}> Hola esta es la imagen </div> */}
-          <img src={control} alt="img" className={style.img} />
-        </div>
+      {/* <div className={style.photo}> Hola esta es la imagen </div> */}
+      <img src={control} alt="img" className={style.img} />
     </div>
+  </div>
   );
 };
 
