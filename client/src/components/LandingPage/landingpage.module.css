@@ -1,5 +1,5 @@
 .backgound {
-  background: url("") no-repeat
+  background: url("../../assets/vrvB1CP.png") no-repeat
     center center fixed;
   background-size: cover;
   max-height: 100vh;
@@ -23,7 +23,13 @@
   color: black;
 }
 
-.buton {
+
+.tittle {
+  font-size: 50px;
+  color: white;
+}
+
+.button {
   letter-spacing: -1px;
   word-spacing: -10px;
   background: black;
@@ -37,7 +43,7 @@
   border-radius: 12px;
 }
 
-.buton::before {
+.button::before {
   content: "";
   position: absolute;
   top: 0;
