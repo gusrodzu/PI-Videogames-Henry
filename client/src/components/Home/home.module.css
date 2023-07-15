@@ -18,7 +18,7 @@
   padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 120px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -66,7 +66,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 15px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
   background: #1f2022;
 }
 
@@ -135,15 +135,17 @@
   height: 150px;
 }
 
+/* Estilos para el contenedor del logo */
 .logoContainer {
-  padding: auto;
+  display: flex;
   align-items: center;
-  padding-bottom: 0px;
+  margin: 20px;
 }
 
-.logo {
-  height: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+
+.logoImage {
+  margin-right: 10px;
+  object-fit: contain;
   max-width: 100%;
+  max-height: 100%;
 }

@@ -1,5 +1,6 @@
 .container {
   background: url("../../assets/background.png") no-repeat center center fixed;
+  background: url("../../assets/Kerfin7_NEA_2332.png") no-repeat center center fixed;
   position: absolute;
   top: 0;
   left: 0;
@@ -79,5 +80,13 @@
   text-align: left;
   font-size: 40px;
   font-weight: 600;
+  color: #ffffff;
+}
+
+.text{
+
+  text-align: left;
+  font-size:16px;
+  font-weight: 400;
   color: #ffffff;
 }

@@ -1,61 +1,112 @@
-.container {
-  position: fixed;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 15% 5% 80%;
-  align-items: center;
-
-  padding: 10px;
-  background-color: #272c32;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-}
-
-.logoContainer {
-  padding: 10px;
-
-  align-items: flex-start;
-  
-}
-
-.logo {
-  max-width: 100%;
-  padding-left: px;
-  width: auto;
-}
-
+/* Estilos para el botón de recarga */
 .reloadContainer {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   padding: 10px;
 }
-
 
 .reload {
   padding: 10px;
   font-size: 25px;
-  background-color: transparent;
+  background-color: #1f2022;
   border: none;
   color: #fff;
   cursor: pointer;
   transition: transform 0.3s; /* Transición suave de 0.3 segundos */
 }
 
+/* Flecha de reload */
 .reload:hover {
   transform: rotate(-120deg); /* Rotación de 360 grados al hacer hover */
 }
 
 
-.searchBarContainer {
-  padding: 10px;
-  padding: auto;
-  justify-content: center;
-  padding-left: 5px;
 
+/* Estilos para el botón de recarga */
+.button {
+  color: white;
+  background-color: #1f2022;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
 }
 
+.button:hover {
+  background-color: #333;
+}
+
+.button svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.button:focus svg {
+  animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Estilos para el contenedor del navbar */
+.navbarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272c32;
+  padding: 10px;
+}
+
+/* Estilos para la barra de navegación */
+.navBar {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Estilos para los elementos del navbar */
+.navItem {
+  margin-right: 10px;
+}
+
+
+
+/* Estilos para el contenedor del logo */
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+
+.logoImage {
+  margin-right: 10px;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 
 

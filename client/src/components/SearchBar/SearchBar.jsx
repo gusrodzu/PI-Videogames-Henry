@@ -19,20 +19,26 @@ const SearchBar = () => {
   };
 
   return (
+
     <div className={style.container}>
-    
-      <input
-        type="text"
-        placeholder=" 🔍 Encuentra un videojuego"
-        value={name}
-        onChange={handleImputChange}
-        className={style.input}
-      />
-      
-      <button type="submit" onClick={handleSubmit} className={style.buton}>
-        Buscar
-      </button>
-      
+
+  
+      <div className={style.search}>
+        <input
+          type="text"
+          placeholder="Encuentra un videojuego"
+          value={name}
+          onChange={handleImputChange}
+          className={style.searchinput}
+        />
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className={style.searchbutton}
+        >
+          Buscar
+        </button>
+      </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 // IMAGENES
 import control from "../../assets/Game Controller.png";
-// import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -62,21 +62,17 @@ const Home = () => {
 
   return (
     <div>
-
       <NavBar handleReload={handleReload} />
 
       <div className={style.containerhome}>
-
-
-
         <aside className={style.aside}>
-
-
-        {/* <Link to="/home" className={style.logoContainer}>
-        <img src={logo} alt="Logo" className={style.logo} />
-      </Link> */}
+        
+          <Link to="/home" className={style.logoContainer}>
+            <img src={logo} alt="Logo" className={style.logo} />
+          </Link>
 
           <label className={style.label}>Filtrar por género</label>
+          
           <select onChange={handleFilterGenre} className={style.select}>
             <option value="All">Todos</option>
             <option value="Action">Acción</option>
@@ -122,11 +118,11 @@ const Home = () => {
 
             <h2 className={style.title}>Crea tu propio viedeojuego</h2>
 
-            <p className={style.text}> Prueba creando tu propio viedeojuego ➜</p>
+            <p className={style.text}>
+              {" "}
+              Prueba creando tu propio viedeojuego ➜
+            </p>
           </Link>
-
-          
-
         </aside>
       </div>
 
@@ -144,7 +140,6 @@ const Home = () => {
           ))}
       </article>
 
-    
       <div>
         <Pager
           gamesPerPage={gamesPerPage}
@@ -152,7 +147,6 @@ const Home = () => {
           paginado={paginado}
         />
       </div>
-
     </div>
   );
 };
