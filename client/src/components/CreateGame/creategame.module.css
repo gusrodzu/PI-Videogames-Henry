@@ -124,7 +124,7 @@ padding: 50px;
 /* Boton activo */
 .button {
   color: white;
-  background-color: #80bd5b;
+  background-color: #35a3dc;
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -142,7 +142,7 @@ padding: 50px;
 }
 
 .button:hover {
-  background-color: #385624;
+  background-color: #1f546d;
 }
 
 
@@ -152,10 +152,10 @@ padding: 50px;
 }
 
 
-/* Estilos para el botón negro*/
+/* Estilos para el botón verde*/
 .buttonblack {
   color: white;
-  background-color: #333;
+  background-color: #80bd5b;
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -173,7 +173,7 @@ padding: 50px;
 }
 
 .buttonblack:hover {
-  background-color: #1f2022;
+  background-color: #385624;
 }
 
 

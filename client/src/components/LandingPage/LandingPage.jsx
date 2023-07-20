@@ -16,6 +16,8 @@ const LandingPage = () => {
     //     </div>
     //  </div>
     // </div>
+
+    
     <div className={style.container}>
       <div className={style.containertext}>
         <div>
