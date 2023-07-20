@@ -20,7 +20,7 @@
 }
 
 .buttonblack:hover {
-  background-color: #1f2022;
+  background-color: #333;
 }
 
 
@@ -54,7 +54,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #272c32;
+  /* background-color: #11131c00;  */
+  background: url("../../assets/backhomenav.jpg") no-repeat center center;
+  background-size: cover;
   padding: 10px;
 }
 

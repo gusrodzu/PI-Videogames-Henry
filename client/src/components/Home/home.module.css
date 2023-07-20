@@ -5,16 +5,20 @@
   justify-content: flex-start;
   align-items: stretch;
   align-self: auto;
-  background: #272c32;
+
 
 }
 
 .aside {
+  background-color: #11131c;
+  background: url("../../assets/light\ blue\ blur.png") no-repeat center center;
+  background-size: cover;
+  /* background: #11131c; */
+
   position: fixed;
   left: 0;
   width: 250px;
   height: 100%;
-  background: #272c32;
   padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
@@ -22,6 +26,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 
 .label {
@@ -58,16 +63,16 @@
 }
 
 .article {
-  margin-left: 250px;
-  top: 200px;
-  /* width: 100%; */
+  
+  background: url("../../assets/backhome.jpg") no-repeat center center;
+  backdrop-filter: blur(300px);
+  background-size: cover;
   display: flex;
-  flex-direction: row;
+  margin-left: 250px;
+
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 15px;
-  /* padding-top: 100px; */
-  background: #1f2022;
+
 }
 
 .label {

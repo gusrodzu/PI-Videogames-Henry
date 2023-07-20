@@ -1,9 +1,18 @@
+//Módulos
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+//Funciones 
 import { useDispatch, useSelector } from "react-redux";
-import { postVideogame, getGenre } from "../../redux/actions/index";
 import validate from "./validate";
-import loading from "../../assets/XDZT.gif"
+
+// Acciones 'postVideogame' y 'getGenre'
+import { postVideogame, getGenre } from "../../redux/actions/index";
+
+// Imagenes
+import loading from "../../assets/Rectangle 5 copy.png";
+
+// CSS 
 import style from "./creategame.module.css";
 
 const CreateGame = () => {
@@ -84,18 +93,11 @@ const CreateGame = () => {
 
   return (
     <div className={style.container}>
-      <nav className={style.navbarContainer}>
-        <div className={style.navBar}>
-          <h1 className={style.title}>Crea tu propio videojuego</h1>
-          <Link to="/home" className={style.buttonblack}>
-            Regresar
-          </Link>
-        </div>
-      </nav>
-
       <div className={style.content}>
-
+          {/* Formulrio */}
         <form onSubmit={handleSubmit} className={style.form}>
+        <h1 className={style.title}>Crea tu propio videojuego</h1>
+        <br></br>
           {/* nombre */}
           <div className={style.field}>
             <label>Nombre:</label>
@@ -228,15 +230,31 @@ const CreateGame = () => {
           >
             {isFormValid ? "Crear" : "Crear"}
           </button>
+
+
+
+          <div className={style.navBar}>
+          
+          <Link to="/home" className={style.buttonblack}>
+            Regresar
+          </Link>
+        </div>
         </form>
 
-        <div className={style.side}>
-          <img src={input.image ? input.image : loading} alt={input.name} />
+        {/* Card Create */}
+        <div className={style.cardhold}>
           <div className={style.cardinfo}>
+            <img src={input.image ? input.image : loading} alt={input.name} />
             <h3 className={style.cardname}>Name: {input.name}</h3>
+            <h3 className={style.cardname}>Platforms: {input.platforms}</h3>
+            <h3 className={style.cardname}>Date: {input.date}</h3>
+            <h3 className={style.cardname}>Genres: {input.genres.join(", ")}</h3>
+            <h3 className={style.cardname}>Stock: {input.stock}</h3> 
+            <h3 className={style.cardname}>Rating: {input.rating}</h3>
+            <br></br>
+            <h3 className={style.cardname}>Description: {input.description}</h3>
           </div>
         </div>
-
       </div>
 
     </div>

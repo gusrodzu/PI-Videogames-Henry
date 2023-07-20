@@ -26,7 +26,6 @@ video,
 iframe,
 figure {
   max-width: 100%;
-  display: block;
 }
 
 li {

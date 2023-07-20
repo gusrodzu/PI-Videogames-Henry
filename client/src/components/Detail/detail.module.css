@@ -45,9 +45,10 @@
   color: #000000;
   font-size: 12px;
   margin: 10px;
-  background-color: #ffffff72;
+  
   padding: 30px;
   border-radius: 20px;
+  background-color: #ffffff72;
   backdrop-filter: blur(10px);
   box-shadow:  0.1px 0.2px 0.3px hsl(var(--shadow-color) / 0),
   0.8px 1.7px 2.8px hsl(var(--shadow-color) / 0.06),
@@ -296,6 +297,7 @@ li {
     transform: rotate(360deg);
   }
 }
+
 
 
 

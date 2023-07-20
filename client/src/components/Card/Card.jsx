@@ -3,14 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./card.module.css";
 
 const Card = ({ name, image, genres, id }) => {
-  // let allgenres = "";
-  // if (Array.isArray(genres)) {
-  //   let genresdb = [];
-  //   genres.forEach((el) => genresdb.push(el.name));
-  //   allgenres = genresdb.join(", ");
-  // } else {
-  //   allgenres = genres;
-  // }
+  
 
   let allgenres = Array.isArray(genres)
     ? genres.map((el) => el.name).join(", ")

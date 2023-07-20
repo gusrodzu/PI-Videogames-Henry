@@ -5,8 +5,6 @@ import { useEffect } from "react";
 import style from "./detail.module.css";
 
 
-import loaderimg from "../../assets/Loading progress.gif";
-
 const Detail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -77,6 +75,7 @@ const Detail = () => {
               <Link to="/home" className={style.buttonblue}>
                 Regresar
               </Link>
+
             </div>
           </div>
 
