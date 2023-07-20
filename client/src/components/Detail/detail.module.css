@@ -127,26 +127,28 @@
   margin-top: 20px;
 }
 
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #ffffff;
+/* Estilos para el botón negro*/
+.buttonblue {
+  color: white;
   background-color: #35a3dc;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
 }
 
-.button:hover {
+.buttonblue:hover {
   background-color: #1f546d;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .rigth {

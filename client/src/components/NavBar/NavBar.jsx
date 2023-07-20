@@ -1,19 +1,14 @@
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./navbar.module.css";
-import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+
 
 const NavBar = (props) => {
   return (
     <nav className={style.navbarContainer}>
-
-      {/* <div className={style.logoContainer}>
-        <img src={logo} alt="Logo" className={style.logoImage} />
-      </div> */}
-
       <ul className={style.navBar}>
         <div className={style.navItem}>
-          <button onClick={props.handleReload} className={style.button}>
+
+          <button onClick={props.handleReload} className={style.buttonblack}>
             <svg
               viewBox="0 0 16 16"
               className="bi bi-arrow-repeat"
@@ -30,6 +25,7 @@ const NavBar = (props) => {
             </svg>
             Recargar
           </button>
+
         </div>
 
         <div className={style.navItem}>

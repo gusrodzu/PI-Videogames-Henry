@@ -74,7 +74,7 @@ const Detail = () => {
                 </div>
               </div>
 
-              <Link to="/home" className={style.button}>
+              <Link to="/home" className={style.buttonblue}>
                 Regresar
               </Link>
             </div>

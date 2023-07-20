@@ -67,7 +67,7 @@
   color: #fff;
   cursor: pointer;
   padding: 12px 40px;
-  border-radius: 15px;
+  border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 0;
@@ -81,6 +81,32 @@
 }
 
 
+
+
+
+/* Estilos para el botón negro*/
+.buttonblack {
+  color: white;
+  background-color: #1f2022;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.buttonblack:hover {
+  background-color: #333;
+}
 
 
 

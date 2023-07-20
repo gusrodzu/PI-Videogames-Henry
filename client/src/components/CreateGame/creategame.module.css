@@ -1,220 +1,244 @@
-:root {
-  --deep-sky-blue: #00bfff;
-}
-
-.all {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-/* .navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--deep-sky-blue);
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  position: fixed;
+/* Estilos para el contenedor del navbar */
+.navbarContainer {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 46px;
-} */
-
-.img {
-  width: 45px;
-  height: 40px;
-  transition: 0.3s ease-in-out;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #272c32;
+  padding: 10px;
 }
 
-.img:hover {
-  transform: scale(1.5);
+/* Estilos para la barra de navegación */
+.navBar {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+/* Estilos para los elementos del navbar */
+.navItem {
+  margin-right: 10px;
+}
+
+
+
+/* creategame.module.css */
+
+.container {
+  padding: 20px;
+  background-color: #272c32;
+}
+
+
 
 .title {
-  text-align: center;
-  text-decoration: none;
+  font-size: 28px;
+  color: #ffffff;
 }
 
-.link {
-  text-align: center;
-  text-decoration: none;
-  border-radius: 12px;
-  border: 2px solid black;
-  padding: 5px;
-  color: black;
-  transition: 0.4s ease-in-out;
-}
 
-.link:hover {
-  padding-top: 8px;
-  padding-bottom: 2px;
-  background-color: #282828;
-  /* color: var(--deep-sky-blue); */
-}
-
-.link:focus {
-  transform: scale(1.05);
-}
-
-.body {
+.content {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  height: 100vh;
-  padding-top: 46px;
-  background-color: #a6a6a6;
+padding: 50px;
 }
 
-.info {
-  width: 900px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: small;
+
+
+
+
+
+
+
+
+.form {
+  flex: 1;
+
 }
 
-.div {
-  border: solid 2px black;
-  width: 280px;
-  margin: 9px;
-  padding: 10px;
-  background-color: #272c32;
-  color: #8d919b;
-}
-
-.div label {
+.field {
+  color: #ffffff;
   margin-bottom: 10px;
-  width: 240px;
-  padding: 5px;
+  flex: 1;
+
 }
 
-.div input {
-  width: 240px;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 12px;
-  margin: 5px;
-}
-
-.description {
-  background-color: #272c32;
+.field label {;
+  margin-bottom: 5px;
   color: #8d919b;
-  border: solid 2px black;
-  width: 430px;
-  margin: 9px;
+  text-align: left;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field input[type="date"],
+.field textarea,
+.field select {
+  color: #8d919b;
+  background-color: #1f2022;
+  width: 500px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: solid 2px #424242;
+ 
+  
+}
+
+.field textarea {
+  resize: vertical;
+  
+}
+
+
+.field select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #867c7c;
+ 
+}
+
+
+.field select option {
+  padding: 8px;
+}
+
+
+.error {
+  color: #ea5665;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+
+
+/* Boton activo */
+.button {
+  color: white;
+  background-color: #80bd5b;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
   align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
 }
 
-.description label {
-  margin-bottom: 10px;
-  width: 400px;
-  padding: 0px;
+.button:hover {
+  background-color: #385624;
 }
 
-.description input {
-  width: 400px;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 12px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.textarea {
-  border: 1px solid black;
-  width: 400px;
-  height: 60px;
-  resize: none;
-  overflow: auto;
-  border-radius: 12px;
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 4px;
+
+/* Estilos para el botón negro*/
+.buttonblack {
+  color: white;
+  background-color: #333;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
 }
 
-.genres {
+.buttonblack:hover {
+  background-color: #1f2022;
+}
+
+
+.buttonblack svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.buttonblack:focus svg {
+  animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.side {
+  flex: 1;
+  padding: 20px;
   background-color: #272c32;
-  width: 898px;
-  margin: 9px;
-  padding: 10px;
-  border: solid 2px black;
 }
+
+.cardinfo {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: #ffffff;
+}
+
+.cardname {
+  font-size: 18px;
+  margin: 0;
+}
+
+
+/* Checkbox */
+.checked {
+  margin-bottom: 1rem;
+
+}
+
 
 .types {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  font-weight: 200;
 }
 
 .type {
-  margin: 3px;
   display: flex;
-  padding-top: 5px;
-  padding-right: 5px;
+  align-items: center;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.type input {
-  margin-left: 5px;
-  margin-right: 5px;
-  width: 15px;
-  height: 25px;
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  font-weight: 300;
 }
 
-.buton {
-  border: none;
-  width: 430px;
-  margin: 9px;
-  padding: 10px;
-  background-color: #272c32;
-  color: #fff;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 12px;
-  transition: 0.3s ease-in-out;
-}
-
-.buton:hover {
-  background-color: #1f2022;
-  font-size: 36px;
-}
-
-.side {
-  width: 100%;
-  border: 3px solid black;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  background-color: #282828;
-  color: rgb(255, 255, 255);
-}
-
-.side img {
-  border-radius: 5px;
-  margin: 10px;
-  width: 550px;
-  height: 480px;
-  border: solid black 2px;
-}
-
-.cardinfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.cardname {
-  margin: 20px;
-}

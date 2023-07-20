@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { postVideogame, getGenre } from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
+import { postVideogame, getGenre } from "../../redux/actions/index";
 import validate from "./validate";
+import loading from "../../assets/XDZT.gif"
 import style from "./creategame.module.css";
 
 const CreateGame = () => {
   const dispatch = useDispatch();
+  const genres = useSelector((state) => state.genres);
 
   useEffect(() => {
     dispatch(getGenre());
-  }, []);
-
-  const genres = useSelector((state) => state.genres);
+  }, [dispatch]);
 
   const [error, setError] = useState({});
   const [input, setInput] = useState({
@@ -31,28 +31,28 @@ const CreateGame = () => {
       ...input,
       [e.target.name]: e.target.value,
     });
-
+    console.log(input);
     setError(
       validate({
         ...input,
         [e.target.name]: e.target.value,
       })
     );
+    console.log(error);
   };
 
   const handleCheck = (e) => {
-    if (e.target.checked) {
-      setInput({
-        ...input,
-        genres: [...input.genres, e.target.value],
-      });
-    } else {
-      const update = input.genres.filter((item) => item !== e.target.value);
-      setInput({
-        ...input,
-        genres: update,
-      });
-    }
+    const { value, checked } = e.target;
+    setInput((prevInput) => {
+      if (checked) {
+        return { ...prevInput, genres: [...prevInput.genres, value] };
+      } else {
+        return {
+          ...prevInput,
+          genres: prevInput.genres.filter((genre) => genre !== value),
+        };
+      }
+    });
   };
 
   const handleSubmit = (e) => {
@@ -83,128 +83,160 @@ const CreateGame = () => {
     input.rating >= 0;
 
   return (
-    <div className={style.all}>
-
-     
-
-      <div className={style.body}>
-        <div>
-
-          <form onSubmit={handleSubmit} className={style.info}>
-            <div className={style.div}>
-              <label htmlFor="">Nombre:</label>
-              <input
-                type="text"
-                value={input.name}
-                name="name"
-                onChange={handleChange}
-              />
-              {error.name && <p>{error.name}</p>}
-            </div>
-            <div className={style.div}>
-              <label htmlFor="">Imagen:</label>
-              <input
-                type="text"
-                value={input.image}
-                name="image"
-                placeholder="Inserta el enlace"
-                onChange={handleChange}
-              />
-              {error.image && <p>{error.image}</p>}
-            </div>
-
-            <div className={style.div}>
-              <label htmlFor="">Plataformas:</label>
-              <input
-                type="text"
-                value={input.platforms}
-                name="platforms"
-                onChange={handleChange}
-              />
-              {error.platforms && <p>{error.platforms}</p>}
-            </div>
-            <div className={style.description}>
-              <label htmlFor="" className={style.label}>
-                Descripción:
-              </label>
-              <textarea
-                type="text"
-                value={input.description}
-                name="description"
-                onChange={handleChange}
-                className={style.textarea}
-              />
-              {error.description && <p>{error.description}</p>}
-            </div>
-            <div className={style.description}>
-              <label htmlFor="">Fecha de lanzamiento:</label>
-              <input
-                type="date"
-                value={input.date}
-                name="date"
-                onChange={handleChange}
-              />
-              {error.date && <p>{error.date}</p>}
-            </div>
-
-            <div className={style.genres}>
-              <label htmlFor="">Géneros:</label>
-
-              <div className={style.types}>
-                {genres.map((genre, i) => {
-                  return (
-                    <label key={i} className={style.type}>
-                      <input
-                        type="checkbox"
-                        value={`${genre.name}`}
-                        name={`${genre.name}`}
-                        onChange={handleCheck}
-                      />
-                      {`${genre.name}`}
-                    </label>
-                  );
-                })}
-              </div>
-              {error.genres && <p>{error.genres}</p>}
-            </div>
-            <div>
-              <label htmlFor="">Existencias</label>
-              <input
-                value={input.stock}
-                name="stock"
-                type="number"
-                onChange={handleChange}
-              />
-            </div>
-            <div className={style.description}>
-              <label htmlFor="">Calificación:</label>
-              <input
-                type="number"
-                value={input.rating}
-                name="rating"
-                onChange={handleChange}
-              />
-              {error.rating && <p>{error.rating}</p>}
-            </div>
-            <button
-              type="submit"
-              id="submit"
-              disabled={!isFormValid}
-              className={style.buton}
-            >
-              {isFormValid ? "¡Crear!" : "No está listo"}
-            </button>
-          </form>
-
+    <div className={style.container}>
+      <nav className={style.navbarContainer}>
+        <div className={style.navBar}>
+          <h1 className={style.title}>Crea tu propio videojuego</h1>
+          <Link to="/home" className={style.buttonblack}>
+            Regresar
+          </Link>
         </div>
+      </nav>
+
+      <div className={style.content}>
+
+        <form onSubmit={handleSubmit} className={style.form}>
+          {/* nombre */}
+          <div className={style.field}>
+            <label>Nombre:</label>
+            <input
+              placeholder="Nombre"
+              type="text"
+              id="name"
+              value={input.name}
+              name="name"
+              onChange={handleChange}
+            />
+            {error.name && <p className={style.error}>{error.name}</p>}
+          </div>
+
+          {/* imagen */}
+          <div className={style.field}>
+            <label htmlFor="image">Image:</label>
+            <input
+              type="text"
+              id="image"
+              value={input.image}
+              name="image"
+              placeholder="Insert the link"
+              onChange={handleChange}
+            />
+            {error.image && <p className={style.error}>{error.image}</p>}
+          </div>
+
+          {/* platafomra */}
+          <div className={style.field}>
+            <label htmlFor="platforms">Platforms:</label>
+            <input
+              type="text"
+              id="platforms"
+              value={input.platforms}
+              name="platforms"
+              onChange={handleChange}
+            />
+            {error.platforms && (
+              <p className={style.error}>{error.platforms}</p>
+            )}
+          </div>
+
+          {/* fecha */}
+          <div className={style.field}>
+            <label htmlFor="date">Release date:</label>
+            <input
+              type="date"
+              id="date"
+              value={input.date}
+              name="date"
+              onChange={handleChange}
+            />
+            {error.date && <p className={style.error}>{error.date}</p>}
+          </div>
+
+          {/* Genero */}
+          <div className={style.field}>
+            <label htmlFor="checkbox">Genros:</label>
+
+            <div className={style.types}>
+              {genres.map((genre, i) => {
+                return (
+                  <label key={i} className={style.type}>
+                    <input
+                      type="checkbox"
+                      value={`${genre.name}`}
+                      name={`${genre.name}`}
+                      onChange={handleCheck}
+                    />
+                    {`${genre.name}`}
+                  </label>
+                );
+              })}
+            </div>
+          
+            {error.genres && <p className={style.error}>{error.genres}</p>}
+            
+          </div>
+
+          {/* Stock */}
+          <div className={style.field}>
+            <label htmlFor="stock">Stock:</label>
+            <input
+              type="number"
+              id="stock"
+              value={input.stock}
+              name="stock"
+              onChange={handleChange}
+            />
+
+            
+
+
+          </div>
+
+          {/* Rting */}
+          <div className={style.field}>
+            <label htmlFor="rating">Rating:</label>
+            <input
+              type="number"
+              id="rating"
+              value={input.rating}
+              name="rating"
+              onChange={handleChange}
+            />
+            {error.rating && <p className={style.error}>{error.rating}</p>}
+          </div>
+
+          {/* Descripcion */}
+          <div className={style.field}>
+            <label htmlFor="description">Description:</label>
+            <textarea
+              id="description"
+              value={input.description}
+              name="description"
+              onChange={handleChange}
+              className={style.textarea}
+            />
+            {error.description && (
+              <p className={style.error}>{error.description}</p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            id="submit"
+            disabled={!isFormValid}
+            className={style.button}
+          >
+            {isFormValid ? "Crear" : "Crear"}
+          </button>
+        </form>
 
         <div className={style.side}>
+          <img src={input.image ? input.image : loading} alt={input.name} />
           <div className={style.cardinfo}>
-            <h3 className={style.cardname}>Nombre: {input.name}</h3>
-            <h4>Géneros: {input.genres.map((el) => el + ", ")}</h4>
+            <h3 className={style.cardname}>Name: {input.name}</h3>
           </div>
         </div>
-        
+
       </div>
 
     </div>
