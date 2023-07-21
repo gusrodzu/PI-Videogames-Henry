@@ -5,17 +5,7 @@ import control from "../../assets/Kerfin7_NEA_2332.png";
 
 const LandingPage = () => {
   return (
-    // <div className={style.backgound}>
-    //   <div className={style.container}>
-    //     <h1 className={style.tittle}>Bienvenido</h1>
-    //     <br></br>
-    //     <div className={style.containerbox}>
-    //       <Link to="/home" className={style.link}>
-    //         <button className={style.button}> ↳</button>
-    //       </Link>
-    //     </div>
-    //  </div>
-    // </div>
+
 
     
     <div className={style.container}>
@@ -31,7 +21,7 @@ const LandingPage = () => {
               selección diversa y entretenida para que encuentres siempre algo
               que se adapte a tus gustos y preferencias
             </p>
-            <Link to="/home" className={style.button}>
+            <Link to="/home" className={style.buttonblue}>
             ¡Comienza la partida!
             </Link>
           </div>
