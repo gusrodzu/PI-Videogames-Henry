@@ -1,28 +1,22 @@
-/* Estilos para el botón negro*/
+/* Common styles for both desktop and mobile */
 .buttonblack {
   color: white;
   background-color: #333;
-  
-  font-weight: 500;
   border-radius: 0.5rem;
-  font-size: 1rem;
-  line-height: 2rem;
   padding: 0.7rem 2rem;
   text-align: center;
   text-decoration: none;
-  margin-right: 0.5rem;
   display: inline-flex;
   align-items: center;
   border: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
-  animation: pulse 1s infinite;
+
 }
 
 .buttonblack:hover {
   background-color: #333;
 }
-
 
 .buttonblack svg {
   display: inline;
@@ -45,42 +39,43 @@
   }
 }
 
-
 /* Estilos para el contenedor del navbar */
 .navbarContainer {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #11131c00;  */
+  width: 100%;
   background: url("../../assets/backhomenav.jpg") no-repeat center center;
   background-size: cover;
-  padding: 10px;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  top: 0;
+  z-index: 100;
+
+ 
 }
 
 /* Estilos para la barra de navegación */
 .navBar {
-  list-style-type: none;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 5rem;
+  
 }
 
 /* Estilos para los elementos del navbar */
 .navItem {
-  margin-right: 10px;
-}
-
-
-
-/* Estilos para el contenedor del logo */
-.logoContainer {
   display: flex;
-  align-items: center;
+
 }
 
+
+/* Contenedor del logo */
+.logoContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px 0 0;
+}
 
 .logoImage {
   margin-right: 10px;
@@ -89,5 +84,29 @@
   max-height: 100%;
 }
 
+/* Media query para movil */
+@media screen and (max-width: 480px) {
+  .navbarContainer {
+    padding: 20px; 
+  }
+
+  .navBar {
+    flex-direction: column; /* Stack navigation items vertically */
+    gap: 10px;
+  }
+
+  .navItem {
+    margin: 0px; 
+  }
+}
 
 
+/* Media query para movil */
+@media screen and (max-width: 480px) {
+  .buttonblack {
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.5rem 6rem;
+    margin-top: 10px;
+  }
+}

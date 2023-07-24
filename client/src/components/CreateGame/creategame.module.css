@@ -26,15 +26,12 @@
 }
 
 
-
-/* creategame.module.css */
-
 .container {
   /* background: #11131c; */
-  background: url("../../assets/backhome.jpg") no-repeat center center;
+  background: url("../../assets/backhome.jpg") no-repeat;
+  backdrop-filter: blur(300px);
   background-size: cover;
 }
-
 
 
 .title {
@@ -45,28 +42,22 @@
 
 .content {
   display: flex;
-padding: 50px;
+  padding-top: 10px;
+  padding: 100px;
 }
-
-
-
-
-
-
-
 
 
 .form {
   flex: 1;
-
 }
 
 .field {
   color: #ffffff;
   margin-bottom: 10px;
   flex: 1;
-
 }
+
+
 
 .field label {;
   margin-bottom: 5px;
@@ -87,28 +78,25 @@ padding: 50px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: solid 2px #424242;
- 
-  
+
 }
 
 .field textarea {
   resize: vertical;
-  
-}
-
-
-.field select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #867c7c;
- 
 }
 
 
 .field select option {
   padding: 8px;
+}
+
+
+.select {
+ 
+}
+
+.select:focus {
+
 }
 
 
@@ -205,7 +193,7 @@ padding: 50px;
   flex: 1;
   padding: 50px;
   border-radius: 20px;
-  /* background-image: url('../../assets/Recurso\ 3.png'); */
+  /* background-image: url('../../assets/level_selected.png'); */
   background-position: center;
   background-repeat: no-repeat;
 }

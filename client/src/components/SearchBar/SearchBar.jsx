@@ -20,7 +20,7 @@ const SearchBar = () => {
 
   return (
 
-    <div className={style.container}>
+   
 
   
       <div className={style.search}>
@@ -39,7 +39,7 @@ const SearchBar = () => {
           Buscar
         </button>
       </div>
-    </div>
+
   );
 };
 

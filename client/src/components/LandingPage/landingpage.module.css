@@ -1,92 +1,60 @@
 .container {
-  background: url("../../assets/background.png") no-repeat center center fixed;
-  background: url("../../assets/Kerfin7_NEA_2332.png") no-repeat center center fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  background: url("../../assets/backhome.jpg") no-repeat center center;
+  backdrop-filter: blur(300px);
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .containertext {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  background-color: #fdfdfdd0;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 600px;
 }
 
 .box {
   margin-bottom: 20px;
-  color: #000000;
-  font-size: 12px;
-  margin: 10px;
-  background-color: #ffffff72;
-  padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.photo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.img {
-  max-width: 100%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 5px;
-  width: 500px;
-  height: 500px;
-}
-
-.name {
-  color: #000000;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 12px;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #35a3dc;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: left;
-}
-
-.button:hover {
-  background-color: #1f546d;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .title {
-  text-align: left;
-  font-size: 40px;
-  font-weight: 600;
-  color: #ffffff;
+  color: #000000;
+  font-size: 60px;
+  margin-bottom: 10px;
 }
 
-.text{
-
-  text-align: left;
-  font-size:16px;
-  font-weight: 400;
-  color: #ffffff;
+.text {
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
+
+/* Estilos para el botón azul*/
+.buttonblue {
+  color: white;
+  background-color: #35a3dc;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
+}
+
+.buttonblue:hover {
+  background-color: #1f546d;
+}
+
+

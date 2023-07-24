@@ -67,9 +67,7 @@ const Detail = () => {
                 </ul>
 
                 <br></br>
-                <div>
-                  <p>Stock: {detail?.stock}</p>
-                </div>
+            
               </div>
 
               <Link to="/home" className={style.buttonblue}>

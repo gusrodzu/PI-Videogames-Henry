@@ -1,13 +1,26 @@
 import SearchBar from "../SearchBar/SearchBar";
 import style from "./navbar.module.css";
 
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const NavBar = (props) => {
   return (
     <nav className={style.navbarContainer}>
-      <ul className={style.navBar}>
-        <div className={style.navItem}>
 
+      <div className={style.navItemLogo}>
+        <Link to="/home" className={style.logoContainer}>
+          <img src={logo} alt="Logo" className={style.logo} />
+        </Link>
+      </div>
+
+      <div className={style.navBar}>
+
+        <div className={style.navItem}>
+          <SearchBar />
+        </div>
+
+        <div className={style.navItem}>
           <button onClick={props.handleReload} className={style.buttonblack}>
             <svg
               viewBox="0 0 16 16"
@@ -25,14 +38,9 @@ const NavBar = (props) => {
             </svg>
             Recargar
           </button>
-
         </div>
-
-        <div className={style.navItem}>
-          <SearchBar />
-        </div>
-      </ul>
-
+        
+      </div>
     </nav>
   );
 };

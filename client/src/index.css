@@ -38,7 +38,7 @@ textarea,
 select,
 button,
 label {
-  font-family: inherit;
+  font-family: "Roboto", sans-serif;
   font-size: inherit;
   hyphens: auto;
   background-color: transparent;

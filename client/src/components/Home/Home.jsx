@@ -62,17 +62,19 @@ const Home = () => {
 
   return (
     <div>
+
       <NavBar handleReload={handleReload} />
 
       <div className={style.containerhome}>
-        <aside className={style.aside}>
-        
-          <Link to="/home" className={style.logoContainer}>
-            <img src={logo} alt="Logo" className={style.logo} />
-          </Link>
 
-          <label className={style.label}>Filtrar por género</label>
-          
+        <aside className={style.leftSide}>
+
+        <h3 >Filtros  </h3>
+        
+         
+
+          <label className={style.label}>Género</label>
+
           <select onChange={handleFilterGenre} className={style.select}>
             <option value="All">Todos</option>
             <option value="Action">Acción</option>
@@ -96,14 +98,14 @@ const Home = () => {
             <option value="Card">Cartas</option>
           </select>
 
-          <label className={style.label}>Filtrar por origen</label>
+          <label className={style.label}>Origen</label>
           <select onChange={handleFilterOrigin} className={style.select}>
             <option value="All">Todos</option>
             <option value="Api">De la API</option>
             <option value="DB">Creados por ti</option>
           </select>
 
-          <label className={style.label}>Ordenar los juegos</label>
+          <label className={style.label}>Ordenar</label>
 
           <select onChange={handleOrder} className={style.select}>
             <option value="All">Reiniciar orden</option>
@@ -124,6 +126,7 @@ const Home = () => {
             </p>
           </Link>
         </aside>
+
       </div>
 
       <article className={style.article}>

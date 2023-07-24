@@ -1,5 +1,5 @@
 .container {
-  align-items: center;
+  background-image: url('../../assets/lower_lines_pause_screen.png');
   gap: 1rem;
   background-color: #11131c;
   padding-top: 10px;

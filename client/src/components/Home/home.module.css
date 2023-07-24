@@ -1,37 +1,25 @@
+/* Estilos generales */
 .containerhome {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-self: auto;
-
-
+  display: grid;
+  color: #8d919b;
 }
 
-.aside {
-  background-color: #11131c;
-  background: url("../../assets/light\ blue\ blur.png") no-repeat center center;
+.leftSide {
+  background: url(../../assets/backhomenav.jpg) no-repeat center center;
   background-size: cover;
-  /* background: #11131c; */
-
   position: fixed;
   left: 0;
   width: 250px;
   height: 100%;
-  padding-top: 7px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
+  padding: 10px;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  
+  justify-content: center;
 }
 
 .label {
   margin-top: 10px;
-  font-weight: 0;
   text-align: left;
 }
 
@@ -63,24 +51,15 @@
 }
 
 .article {
-  
-  background: url("../../assets/backhome.jpg") no-repeat center center;
-  backdrop-filter: blur(300px);
-  background-size: cover;
   display: flex;
   margin-left: 250px;
-
   flex-wrap: wrap;
   justify-content: space-evenly;
-
 }
 
 .label {
   color: #8d919b;
-  width: 500;
 }
-
-
 
 .buttoncontainer {
   padding: 20px;
@@ -93,11 +72,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
   margin-top: 50px;
-  text-decoration: none;
-  
-  
+  text-decoration: none; 
 }
-
 
 .text {
   text-align: left;
@@ -112,24 +88,30 @@
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
-  /* text-shadow: 2px 2px 4px #38180F; */
 }
 
-.button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+/*Botón azul*/
+.buttonblue {
+  color: white;
+  background-color: #35a3dc;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0.7rem 2rem;
+  text-align: center;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 800;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  animation: pulse 1s infinite;
 }
 
-.button:hover {
-  background-color: #e0e0e0;
+.buttonblue:hover {
+  background-color: #1f546d;
 }
 
 .control {
@@ -140,13 +122,12 @@
   height: 150px;
 }
 
-/* Estilos para el contenedor del logo */
+/* Contenedor del logo */
 .logoContainer {
   display: flex;
   align-items: center;
   margin: 20px;
 }
-
 
 .logoImage {
   margin-right: 10px;
@@ -154,3 +135,40 @@
   max-width: 100%;
   max-height: 100%;
 }
+
+/* Media query para movil */
+@media screen and (max-width: 768px) {
+  .containerhome {
+    grid-template-columns: 1fr;
+  }
+
+  .leftSide {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .article {
+    margin-left: 0;
+  }
+}
+
+/* Media query pantalla grande */
+@media screen and (min-width: 1200px) {
+  .containerhome {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .leftSide {
+    position: fixed;
+  }
+
+  .article {
+    margin-left: 250px;
+  }
+}
+
+
+
+
