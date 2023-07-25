@@ -69,7 +69,7 @@ const Home = () => {
 
         <aside className={style.leftSide}>
 
-        <h3 >Filtros  </h3>
+        <p> Selecciona las opción que deseas aplicar .</p>
         
          
 
