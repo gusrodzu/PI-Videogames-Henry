@@ -51,6 +51,8 @@
 }
 
 .article {
+  background: url(../../assets/backhome.jpg) no-repeat center center;
+  background-size: cover;
   display: flex;
   margin-left: 250px;
   flex-wrap: wrap;
