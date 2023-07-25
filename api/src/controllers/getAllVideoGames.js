@@ -3,6 +3,8 @@ require("dotenv").config();
 const { API_KEY, URL_BASE } = process.env;
 const { Videogame, Genre } = require("../db");
 
+//mostrar solo id nombre imagen y genero en el compaginado principal
+
 const getAllVideoGamesByAPI = async (req, res) => {
   try {
     let URL = ``;
@@ -27,7 +29,7 @@ const getAllVideoGamesByAPI = async (req, res) => {
           }),
         };
         videoGameInfo.push(obj);
-
+        //tengo 20 videogames
       })
     );
     return videoGameInfo;

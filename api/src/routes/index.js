@@ -12,8 +12,8 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.get("/videogames", (req, res) => {
-
-const { name } = req.query;
+  //getAllVideoGames(req, res);
+  const { name } = req.query;
   if (name) {
     getVideogamesByName(req, res);
   } else {
@@ -22,7 +22,9 @@ const { name } = req.query;
 });
 
 router.get("/videogames/:id", (req, res) => getVideogamesByID(req, res));
+
 router.get("/genres", getGenre);
+
 router.post("/videogames", postVideoGames);
 
 module.exports = router;

@@ -1,6 +1,7 @@
 const axios = require("axios");
 require("dotenv").config();
 const { API_KEY, URL_BASE } = process.env;
+// const URL_BASE = "https://api.rawg.io/api/games";
 const { Videogame, Genre } = require("../db");
 const { Op } = require("sequelize");
 

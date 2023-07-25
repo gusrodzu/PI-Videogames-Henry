@@ -9,7 +9,6 @@ import {
   GET_DETAIL,
 } from "../action-types";
 
-// Variabeles de estados de la aplicación
 let initialState = {
   videogames: [],
   allVideogames: [],
@@ -17,9 +16,6 @@ let initialState = {
   detail: [],
 };
 
-
-
-// Actualiza el estado con los videojuegos obtenidos y los guarda en 'videogames' y 'allVideogames'
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_VIDEOGAMES:
@@ -29,7 +25,6 @@ const rootReducer = (state = initialState, action) => {
         allVideogames: action.payload,
       };
 
-    // Filtra los videojuegos por género según el payload recibido
     case FILTER_BY_GENRE:
       const filteredgames = state.allVideogames;
       let statusFiltered =
@@ -43,18 +38,15 @@ const rootReducer = (state = initialState, action) => {
         videogames: statusFiltered,
       };
 
-    // Actualiza el estado con los géneros de videojuegos obtenidos
     case GET_GENRE:
       return {
         ...state,
         genres: action.payload,
       };
 
-    // Retorna el estado actual sin realizar cambios
     case POST_VIDEOGAME:
       return { ...state };
 
-    // Filtra los videojuegos por origen según el payload recibido
     case FILTER_BY_ORIGIN:
       const filteredorigin = state.videogames;
       const createdFilter =
@@ -67,23 +59,22 @@ const rootReducer = (state = initialState, action) => {
           action.payload === "All" ? state.allVideogames : createdFilter,
       };
 
-    // Ordena los videojuegos según el payload recibido
     case ORDER:
       let sortedVid = [...state.videogames];
       switch (action.payload) {
-        case "All": //Todos
+        case "All":
           sortedVid = [...state.allVideogames];
           break;
-        case "ascAlf"://Ascendente Alafabetico
+        case "ascAlf":
           sortedVid.sort((a, b) => a.name.localeCompare(b.name));
           break;
-        case "descAlf": //Descendente Alfabetico
+        case "descAlf":
           sortedVid.sort((a, b) => b.name.localeCompare(a.name));
           break;
-        case "descRat": //Descendente Rating
+        case "descRat":
           sortedVid.sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
           break;
-        case "ascRat": //Ascendente Rating
+        case "ascRat":
           sortedVid.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
           break;
         default:
@@ -94,21 +85,18 @@ const rootReducer = (state = initialState, action) => {
         videogames: sortedVid,
       };
 
- // Actualiza el estado con los videojuegos filtrados por nombre obtenidos
     case GET_NAME_VIDEOGAMES:
       return {
         ...state,
         videogames: action.payload,
+        //allVideogames:action.payload para que funcione el filtrado
       };
 
- // Actualiza el estado con los detalles de un videojuego específico obtenidos
     case GET_DETAIL:
       return {
         ...state,
         detail: action.payload,
       };
-
- // Retorna el estado actual sin realizar cambios
     default:
       return { ...state };
   }

@@ -9,9 +9,6 @@ import {
 } from "../action-types";
 import axios from "axios";
 
-
-
-// Solicitud GET para obtener todos los videojuegos
 export const getVideogames = () => {
   return async function (dispatch) {
     let { data } = await axios("http://localhost:3001/videogames");
@@ -22,7 +19,6 @@ export const getVideogames = () => {
   };
 };
 
-// Solicitud GET para buscar videojuegos por nombre
 export const getNameVideogames = (name) => {
   return async function (dispatch) {
     try {
@@ -39,7 +35,6 @@ export const getNameVideogames = (name) => {
   };
 };
 
-// Solicitud GET para obtener todos los géneros de videojuegos
 export const getGenre = () => {
   return async function (dispatch) {
     const { data } = await axios("http://localhost:3001/genres");
@@ -47,7 +42,6 @@ export const getGenre = () => {
   };
 };
 
-// Solicitud GET para obtener los detalles de un videojuego específico
 export const getDetail = (id) => {
   return async function (dispatch) {
     const { data } = await axios("http://localhost:3001/videogames/" + id);
@@ -58,7 +52,6 @@ export const getDetail = (id) => {
   };
 };
 
-// Solicitud POST para agregar un nuevo videojuego
 export const postVideogame = (payload) => {
   return async function (dispatch) {
     const { data } = await axios.post(
@@ -70,17 +63,14 @@ export const postVideogame = (payload) => {
   };
 };
 
-// Filtra los videojuegos por género en el almacén Redux
 export const filterVideogames = (payload) => {
   return { type: FILTER_BY_GENRE, payload };
 };
 
-// Filtra los videojuegos por origen en el almacén Redux
 export const filterOrigin = (payload) => {
   return { type: FILTER_BY_ORIGIN, payload };
 };
 
-// Ordena los videojuegos en el almacén Redux
 export const Order = (payload) => {
   return { type: ORDER, payload };
 };
