@@ -6,8 +6,6 @@
   padding-bottom: 20px;
   padding-left: 250px;
   padding-right: 0px;
-
-  
 }
 
 .ul {
@@ -24,9 +22,41 @@
   color: #ffffff;
   border-radius: 4px;
   cursor: pointer;
-  
 }
 
 .li:hover {
   background-color: #8d919b;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .ul {
+    flex-wrap: wrap;
+  }
+  
+  .li {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+}
+
+/* Media query para pantallas medianas */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* Media query para pantallas grandes */
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
