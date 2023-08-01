@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 
 // IMAGENES
 import control from "../../assets/Game Controller.png";
-import logo from "../../assets/logo.png";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,18 +22,17 @@ const Home = () => {
   useEffect(() => {
     dispatch(getVideogames());
   }, [dispatch]);
+
   const allGames = useSelector((state) => state.videogames);
 
   const [orden, setOrden] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage, setGamesPerPage] = useState(15);
   const indexOfLastGame = currentPage * gamesPerPage;
-
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
-  let currentGames = allGames.slice(indexOfFirstGame, indexOfLastGame);
+  const currentGames = allGames.slice(indexOfFirstGame, indexOfLastGame);
 
-  const handleReload = (e) => {
-    e.preventDefault();
+  const handleReload = () => {
     dispatch(getVideogames());
   };
 
@@ -43,40 +41,32 @@ const Home = () => {
   };
 
   const handleFilterGenre = (e) => {
-    let valor = e.target.value;
-    e.preventDefault();
+    const valor = e.target.value;
     dispatch(filterVideogames(valor));
   };
 
   const handleFilterOrigin = (e) => {
-    e.preventDefault();
     dispatch(filterOrigin(e.target.value));
   };
 
   const handleOrder = (e) => {
-    e.preventDefault();
-    dispatch(Order(e.target.value));
+    const value = e.target.value;
+    dispatch(Order(value));
     setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
+    setOrden(`Ordenado ${value}`);
   };
 
   return (
     <div>
-
       <NavBar handleReload={handleReload} />
 
       <div className={style.containerhome}>
-
         <aside className={style.leftSide}>
-
-        <p> Selecciona las opción que deseas aplicar .</p>
-        
-         
+          <p>Selecciona las opciones que deseas aplicar.</p>
 
           <label className={style.label}>Género</label>
-
           <select onChange={handleFilterGenre} className={style.select}>
-            <option value="All">Todos</option>
+          <option value="All">Todos</option>
             <option value="Action">Acción</option>
             <option value="Indie">Indie</option>
             <option value="Adventure">Aventura</option>
@@ -100,15 +90,14 @@ const Home = () => {
 
           <label className={style.label}>Origen</label>
           <select onChange={handleFilterOrigin} className={style.select}>
-            <option value="All">Todos</option>
+          <option value="All">Todos</option>
             <option value="Api">De la API</option>
             <option value="DB">Creados por ti</option>
           </select>
 
           <label className={style.label}>Ordenar</label>
-
           <select onChange={handleOrder} className={style.select}>
-            <option value="All">Reiniciar orden</option>
+          <option value="All">Reiniciar orden</option>
             <option value="ascAlf">Orden alfabético ascendente</option>
             <option value="descAlf">Orden alfabético descendente</option>
             <option value="ascRat">Mayor puntuación</option>
@@ -117,30 +106,23 @@ const Home = () => {
 
           <Link to="/videogame" className={style.buttoncontainer}>
             <img src={control} alt="control" className={style.control} />
-
-            <h2 className={style.title}>Crea tu propio viedeojuego</h2>
-
-            <p className={style.text}>
-              {" "}
-              Prueba creando tu propio viedeojuego ➜
-            </p>
+            <h2 className={style.title}>Crea tu propio videojuego</h2>
+            <p className={style.text}>Prueba creando tu propio videojuego ➜</p>
           </Link>
         </aside>
-
       </div>
 
       <article className={style.article}>
-        {currentGames &&
-          currentGames.map((vg) => (
-            <Card
-              key={vg?.id}
-              name={vg?.name}
-              image={vg?.image}
-              genre={vg?.genre}
-              genres={vg?.genres}
-              id={vg?.id}
-            />
-          ))}
+        {currentGames.map((vg) => (
+          <Card
+            key={vg.id}
+            name={vg.name}
+            image={vg.image}
+            genre={vg.genre}
+            genres={vg.genres}
+            id={vg.id}
+          />
+        ))}
       </article>
 
       <div>

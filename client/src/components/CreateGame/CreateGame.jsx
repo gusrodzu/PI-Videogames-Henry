@@ -1,9 +1,9 @@
-//Módulos
+// Módulos
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-//Funciones 
 import { useDispatch, useSelector } from "react-redux";
+
+// Funciones
 import validate from "./validate";
 
 // Acciones 'postVideogame' y 'getGenre'
@@ -12,7 +12,7 @@ import { postVideogame, getGenre } from "../../redux/actions/index";
 // Imagenes
 import loading from "../../assets/Rectangle 5 copy.png";
 
-// CSS 
+// CSS
 import style from "./creategame.module.css";
 
 const CreateGame = () => {
@@ -63,13 +63,29 @@ const CreateGame = () => {
         genres: update,
       });
     }
+
+    // Validar el campo genres
+    setError({
+      ...error,
+      genres: input.genres.length < 0 ? "" : "Debes seleccionar al menos un género.",
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Verificar si al menos un género está seleccionado
+    if (input.genres.length === 0) {
+      setError((prevError) => ({
+        ...prevError,
+        genres: "Debes seleccionar al menos un género.",
+      }));
+      return;
+    }
+
+    // Si hay géneros seleccionados, enviar el formulario
     dispatch(postVideogame(input));
-    alert("Personaje creado");
+    alert("Videojuego creado");
     console.log("Soy del DISPATCH       ", input);
 
     setInput({
@@ -82,6 +98,12 @@ const CreateGame = () => {
       rating: 0,
       stock: "",
     });
+
+    // Reiniciar el error del campo 'genres' cuando se envía el formulario
+    setError((prevError) => ({
+      ...prevError,
+      genres: "",
+    }));
   };
 
   const isFormValid =
@@ -92,10 +114,9 @@ const CreateGame = () => {
     input.platforms.trim() !== "" &&
     input.date.trim() !== "" &&
     input.rating >= 0;
-  
 
   return (
-   <div className={style.container}>
+    <div className={style.container}>
       <div className={style.content}>
         <form onSubmit={handleSubmit} className={style.form}>
           <h1 className={style.title}>Crea tu propio videojuego</h1>
@@ -154,7 +175,7 @@ const CreateGame = () => {
           </div>
 
           <div className={style.field}>
-            <label htmlFor="checkbox">Genros:</label>
+            <label htmlFor="checkbox">Géneros:</label>
             <div className={style.types}>
               {genres.map((genre, i) => {
                 return (
@@ -232,8 +253,6 @@ const CreateGame = () => {
       </div>
     </div>
   );
-
-
 };
 
 export default CreateGame;
