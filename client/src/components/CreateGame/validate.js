@@ -12,11 +12,10 @@ const validate = (input) => {
   }
 
   // Verifica el campo `genres`: al menos un género seleccionado.
-  // if (input.genres && !input.genres.some((genre) => genre === true)) {
-  //   errors.genres = "Selecciona al menos un género.";
+  // if (!input.genres || !input.genres.some((genre) => genre === true)) {
+  //   errors.genres = "Selecciona al menos un campo";
   // }
-
-
+  
 
   // Verifica el campo `description`: entre 10 y 1500 caracteres.
   if (input.description && !/^[\w\s\d\S]{10,1500}$/.test(input.description)) {
@@ -32,13 +31,13 @@ const validate = (input) => {
 
   // Verifica el campo `date`: no está vacío y no excede el día actual.
   if (input.date && !input.date.trim()) {
-    errors.date = "Se requiere una fecha.";
+    errors.date = "Se requiere una fecha valida.";
   } else {
     const today = new Date();
     const inputDate = new Date(input.date);
 
     if (inputDate > today) {
-      errors.date = "La fecha de lanzamiento no puede ser en el futuro.";
+      errors.date = "La fecha de lanzamiento no puede ser una fecha futura.";
     } else {
       errors.date = "";
     }

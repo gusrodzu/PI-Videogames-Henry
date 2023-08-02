@@ -13,6 +13,7 @@ import Card from "../Card/Card";
 import style from "./home.module.css";
 import { Link } from "react-router-dom";
 
+
 // IMAGENES
 import control from "../../assets/Game Controller.png";
 
@@ -109,20 +110,35 @@ const Home = () => {
             <h2 className={style.title}>Crea tu propio videojuego</h2>
             <p className={style.text}>Prueba creando tu propio videojuego ➜</p>
           </Link>
+
         </aside>
       </div>
 
       <article className={style.article}>
-        {currentGames.map((vg) => (
-          <Card
-            key={vg.id}
-            name={vg.name}
-            image={vg.image}
-            genre={vg.genre}
-            genres={vg.genres}
-            id={vg.id}
-          />
-        ))}
+        {currentGames.length === 0 ? (
+          <div className={style.errorContainer}>
+       
+            <h2 className={style.errorText}>Oops, parece que no hay videojuegos disponibles.</h2>
+            <p className={style.errorText}>Por favor, intenta de nuevo.</p>
+            <button className={style.reloadButton} onClick={() => window.location.reload()}>
+                Aceptar
+            </button>
+            
+        </div>
+          
+        ) : (
+          currentGames.map((vg) => (
+            <Card
+              key={vg.id}
+              name={vg.name}
+              image={vg.image}
+              genre={vg.genre}
+              genres={vg.genres}
+              id={vg.id}
+            />
+          ))
+        )}
+
       </article>
 
       <div>

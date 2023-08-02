@@ -4,26 +4,27 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 // Funciones
-import validate from "./validate";
+import validate from "./validate"; // Importa la función de validación para el formulario
 
 // Acciones 'postVideogame' y 'getGenre'
-import { postVideogame, getGenre } from "../../redux/actions/index";
+import { postVideogame, getGenre } from "../../redux/actions/index"; // Importa acciones para el manejo de datos de videojuegos y géneros desde Redux
 
 // Imagenes
-import loading from "../../assets/Rectangle 5 copy.png";
+import loading from "../../assets/Rectangle 5 copy.png"; // Importa una imagen de carga
 
 // CSS
-import style from "./creategame.module.css";
+import style from "./creategame.module.css"; // Importa los estilos CSS del componente
 
 const CreateGame = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // Instancia el dispatch de Redux
 
   useEffect(() => {
-    dispatch(getGenre());
+    dispatch(getGenre()); // Obtiene los géneros del servidor al cargar el componente
   }, []);
-  const genres = useSelector((state) => state.genres);
+  const genres = useSelector((state) => state.genres); // Obtiene los géneros desde el estado global utilizando el hook useSelector de Redux
 
-  const [error, setError] = useState({});
+  // Estado local del componente
+  const [error, setError] = useState({}); // Estado para almacenar mensajes de error de validación
   const [input, setInput] = useState({
     name: "",
     image: "",
@@ -33,23 +34,23 @@ const CreateGame = () => {
     date: "",
     rating: 0,
     stock: 0,
-  });
+  }); // Estado para almacenar los valores de los campos del formulario
 
+  // Manejador de cambios en los campos del formulario
   const handleChange = (e) => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
-    console.log(input);
     setError(
       validate({
         ...input,
         [e.target.name]: e.target.value,
       })
     );
-    console.log(error);
   };
 
+  // Manejador de cambios en los checkboxes de género
   const handleCheck = (e) => {
     if (e.target.checked) {
       setInput({
@@ -63,31 +64,14 @@ const CreateGame = () => {
         genres: update,
       });
     }
-
-    // Validar el campo genres
-    setError({
-      ...error,
-      genres: input.genres.length < 0 ? "" : "Debes seleccionar al menos un género.",
-    });
   };
 
+  // Manejador del envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Verificar si al menos un género está seleccionado
-    if (input.genres.length === 0) {
-      setError((prevError) => ({
-        ...prevError,
-        genres: "Debes seleccionar al menos un género.",
-      }));
-      return;
-    }
-
-    // Si hay géneros seleccionados, enviar el formulario
-    dispatch(postVideogame(input));
-    alert("Videojuego creado");
-    console.log("Soy del DISPATCH       ", input);
-
+    dispatch(postVideogame(input)); // Envía los datos del videojuego al servidor mediante la acción postVideogame de Redux
+    alert("Video juego creado"); // Muestra una alerta al usuario para indicar que el videojuego ha sido creado
     setInput({
       name: "",
       image: "",
@@ -96,16 +80,10 @@ const CreateGame = () => {
       platforms: "",
       date: "",
       rating: 0,
-      stock: "",
-    });
-
-    // Reiniciar el error del campo 'genres' cuando se envía el formulario
-    setError((prevError) => ({
-      ...prevError,
-      genres: "",
-    }));
+    }); // Limpia los campos del formulario después del envío
   };
 
+  // Verifica si el formulario es válido
   const isFormValid =
     input.name.trim() !== "" &&
     input.image.trim() !== "" &&
@@ -122,6 +100,7 @@ const CreateGame = () => {
           <h1 className={style.title}>Crea tu propio videojuego</h1>
           <br></br>
 
+          {/* Campo de nombre */}
           <div className={style.field}>
             <label>Nombre:</label>
             <input
@@ -135,6 +114,7 @@ const CreateGame = () => {
             {error.name && <p className={style.error}>{error.name}</p>}
           </div>
 
+          {/* Campo de imagen */}
           <div className={style.field}>
             <label htmlFor="image">Image:</label>
             <input
@@ -148,6 +128,7 @@ const CreateGame = () => {
             {error.image && <p className={style.error}>{error.image}</p>}
           </div>
 
+          {/* Campo de plataformas */}
           <div className={style.field}>
             <label htmlFor="platforms">Platforms:</label>
             <input
@@ -162,6 +143,7 @@ const CreateGame = () => {
             )}
           </div>
 
+          {/* Campo de fecha de lanzamiento */}
           <div className={style.field}>
             <label htmlFor="date">Release date:</label>
             <input
@@ -174,8 +156,11 @@ const CreateGame = () => {
             {error.date && <p className={style.error}>{error.date}</p>}
           </div>
 
+          {/* Checkbox de géneros */}
           <div className={style.field}>
-            <label htmlFor="checkbox">Géneros:</label>
+            <label htmlFor="checkbox"></label>
+            <p>Selecciona al menos un género.</p>
+            <br></br>
             <div className={style.types}>
               {genres.map((genre, i) => {
                 return (
@@ -194,6 +179,7 @@ const CreateGame = () => {
             {error.genres && <p className={style.error}>{error.genres}</p>}
           </div>
 
+          {/* Campo de rating */}
           <div className={style.field}>
             <label htmlFor="rating">Rating:</label>
             <input
@@ -206,6 +192,7 @@ const CreateGame = () => {
             {error.rating && <p className={style.error}>{error.rating}</p>}
           </div>
 
+          {/* Campo de descripción */}
           <div className={style.field}>
             <label htmlFor="description">Description:</label>
             <textarea
@@ -220,6 +207,7 @@ const CreateGame = () => {
             )}
           </div>
 
+          {/* Botón para enviar el formulario */}
           <button
             type="submit"
             id="submit"
@@ -229,6 +217,7 @@ const CreateGame = () => {
             {isFormValid ? "Crear" : "Crear"}
           </button>
 
+          {/* Enlace para regresar a la página de inicio */}
           <div className={style.navBar}>
             <Link to="/home" className={style.buttonblack}>
               Regresar
@@ -236,6 +225,7 @@ const CreateGame = () => {
           </div>
         </form>
 
+        {/* Vista previa de la información del videojuego */}
         <div className={style.cardhold}>
           <div className={style.cardinfo}>
             <img src={input.image ? input.image : loading} alt={input.name} />

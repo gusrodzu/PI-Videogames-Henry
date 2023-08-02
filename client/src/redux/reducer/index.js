@@ -21,7 +21,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_VIDEOGAMES:
       return {
         ...state,
-        videogames: action.payload,
+        videogames: action.payload, //
         allVideogames: action.payload,
       };
 
@@ -89,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         videogames: action.payload,
-        //allVideogames:action.payload para que funcione el filtrado
+  
       };
 
     case GET_DETAIL:

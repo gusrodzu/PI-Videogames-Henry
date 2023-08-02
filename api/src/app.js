@@ -7,6 +7,7 @@ const routes = require('./routes/index.js');
 require('./db.js');
 
 const server = express();
+
 server.name = 'API';
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
@@ -23,8 +24,8 @@ server.use((req, res, next) => {
 
 server.use('/', routes);
 
-
-server.use((err, req, res, next) => { 
+// Error catching endware.
+server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
   console.error(err);
